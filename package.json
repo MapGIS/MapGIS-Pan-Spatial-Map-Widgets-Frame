@@ -1,0 +1,35 @@
+{
+  "name": "@mapgis/mapgis-pan-spatial-map-widgets-frame",
+  "version": "0.1.0",
+  "description": "中地数码一张图微件库",
+  "productName": "MapGIS Pan-Spatial Map Widgets Frame",
+  "author": "MapGIS",
+  "license": "Apache-2.0",
+  "main": "dist-libs/mapgis-pan-spatial-map-widgets-frame.umd.min.js",
+  "module1": "src/index.ts",
+  "scripts": {
+    "build": "node --max_old_space_size=9960 ./node_modules/@vue/cli-service/bin/vue-cli-service build --target lib --name mapgis-pan-spatial-map-widgets-frame src/index.ts"
+  },
+  "dependencies": {
+    "@mapgis/web-app-framework": "^16.0.0",
+    "vue": "2.6.14"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "@vue/cli-plugin-babel": "~4.4.4",
+    "@vue/cli-plugin-eslint": "~4.4.4",
+    "@vue/cli-plugin-typescript": "^4.4.0",
+    "@vue/cli-service": "~4.4.4",
+    "babel-eslint": "^10.0.1",
+    "concurrently": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "2.6.14"
+  }
+}

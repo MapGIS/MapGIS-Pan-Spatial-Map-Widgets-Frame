@@ -1,19 +1,4 @@
-export {
-  api,
-  getRequest,
-  ProjectionTransformationUtil,
-  events,
-  eventBus,
-  baseConfigInstance,
-  loadConfigs,
-  markerIconInstance,
-  dataCatalogManagerInstance,
-  DataCatalogManager,
-  DataFlowList,
-  ActiveResultSet,
-  DataStoreCatalog,
-  ProjectorManager,
-} from './model'
+export { events, eventBus } from './model'
 
 import { KuoZhanWeiJian } from './widgets/kuo-zhan-wei-jian-mu-lu'
 

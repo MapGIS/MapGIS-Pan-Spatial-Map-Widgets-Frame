@@ -23,9 +23,9 @@ import {
   IGSSceneSublayerType,
   LoadStatus,
   Objects,
+  api,
+  baseConfigInstance,
 } from '@mapgis/web-app-framework'
-
-import { api, baseConfigInstance } from '../../../model'
 
 export default {
   name: 'KuoZhanWeiJian',

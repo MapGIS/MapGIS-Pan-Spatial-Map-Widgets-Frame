@@ -1,5 +1,3 @@
-export { events, eventBus } from './model'
-
 import { KuoZhanWeiJian } from './widgets/kuo-zhan-wei-jian-mu-lu'
 
 const components = [KuoZhanWeiJian]

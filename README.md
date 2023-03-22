@@ -2,9 +2,6 @@
 
 ```plain
 |── src
-   |── components                           # 公共组件
-   |── model                                # 公共类、方法
-   |── theme                                # 公共样式文件
    |── widgets                              # 微件
       |── kuo-zhan-wei-jian                 # 扩展微件插件
       |── index.ts                          # 入口文件
@@ -61,6 +58,4 @@ yarn build
 
 # 微件扩展指南
 
-详见 [微件扩展指南](./docs/微件扩展指南.md ) 
-
-
+详见 [微件扩展指南](./docs/微件扩展指南.md)

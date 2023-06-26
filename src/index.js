@@ -4,7 +4,6 @@ const components = [KuoZhanWeiJian]
 
 const install = (Vue) => {
   components.forEach((component) => {
-    debugger
     Vue.component(
       (component.options && component.options.name) || component.name,
       component

@@ -1,7 +1,7 @@
 <template>
   <div>
     扩展微件
-    <mp-window-wrapper :visible="visible">
+    <mp-window-wrapper :visible="true">
       <mp-window
         title="微件内部弹出框"
         :visible="true"

@@ -3,9 +3,11 @@
 ```plain
 |── src
    |── widgets                              # 微件
-      |── kuo-zhan-wei-jian                 # 扩展微件插件
-      |── index.ts                          # 入口文件
-      |── shims-vue.d.ts                    # .vue适配文件
+      |── kuo-zhan-wei-jian-mu-lu           # 扩展微件目录
+         |── kuo-zhan-wei-jian              # 扩展微件插件文件夹
+            |── kuo-zhan-wei-jian.vue       # 扩展微件插件
+      |── index.js                          # 扩展微件目录里插件导出文件
+   |── index.ts                             # 项目入口文件
 |── .editorconfig                           # editor配置
 |── .eslintignore                           # ESlint忽略路径
 |── .eslintrc.js                            # ESlint配置
@@ -20,22 +22,10 @@
 
 # 安装依赖及打包
 
-从 GitLab 上拉取 mapgis-pan-spatial-map-widgets 代码，执行 yarn 命令安装依赖
+从 GitLab 上拉取 mapgis-pan-spatial-map-widgets-frame 代码，执行 yarn 命令安装依赖
 
 ```
 yarn
-```
-
-在 Web-App-Framework 包下执行 yarn link 命令
-
-```
-yarn link
-```
-
-在 mapgis-pan-spatial-map-widgets 包下执行 yarn link @mapgis/web-app-framework 命令软链接 Web-App-Framework 包
-
-```
-yarn link @mapgis/web-app-framework
 ```
 
 执行 yarn build 命令进行打包，打包后文件输出至 dist-libs 目录下
@@ -48,11 +38,41 @@ yarn build
 
 # 引入方式
 
-支持 src 引入及 dist-libs 两种引入方式，默认情况下为 dist-libs 引入。如需修改为 src 引入方式，可在 package.json 文件当中修改"main"为"main1"，"module1"为"module"。
+支持 src 引入及 dist-libs 两种引入方式，默认情况下为 dist-libs 引入。如需修改为 src 引入方式，可在 package.json 文件当中修改"main"为"main1"，"module1"为"module"，以下截图方式。**src 方式引入，方便调试，发布请使用 dist-libs 的方式引入**，即修改"main1"为"main"，"module"为"module1"。
 
 ![](./images/%E4%BF%AE%E6%94%B9%E5%BC%95%E7%94%A8%E8%B7%AF%E5%BE%84.png)
 
-成功引入至 mapgis-pan-spatial-map 框架包后执行 yarn dev:mock 命令运行，在前台页面可以看见微件显示效果
+# 运行程序
+
+1、在 mapgis-pan-spatial-map-mock-server 目录下执行 yarn mock 命令
+
+```
+yarn mock
+```
+
+2、在 mapgis-pan-spatial-map-widgets-frame 目录下执行 yarn link 命令
+
+```
+yarn link
+```
+
+3、在 mapgis-pan-spatial-map-app 目录下执行 yarn link @mapgis/mapgis-pan-spatial-map-widgets-frame
+
+```
+yarn link @mapgis/mapgis-pan-spatial-map-widgets-frame
+```
+
+4、在 mapgis-pan-spatial-map-app/src/core/use.js 中引入@mapgis/mapgis-pan-spatial-map-widgets-frame
+
+![](./docs/images/引入微件库.png)
+
+5、在 mapgis-pan-spatial-map-app 目录下执行 yarn serve 命令
+
+```
+yarn serve
+```
+
+在前台页面可以看见微件显示效果
 
 ![](./images/%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.png)
 

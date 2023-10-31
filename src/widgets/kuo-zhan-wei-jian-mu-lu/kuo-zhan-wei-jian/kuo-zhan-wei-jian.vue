@@ -29,6 +29,9 @@ import {
 
 export default {
   name: 'KuoZhanWeiJian',
+  // 混入WidgetMixin，可以获取微件的状态及微件生命周期事件，
+  // 以及地图对象，在微件中可以直接通过this.XXX获取，
+  // 比如this.map(二维地图对象),this.mapbox(MapBox 库),this.viewer(三维场景对象),this.Cesium(Ceisum 库),this.vueCesium(Ceisum vue 对象)
   mixins: [WidgetMixin],
   computed: {
     // 从微件配置里获取ip
@@ -75,6 +78,33 @@ export default {
     },
   },
   methods: {
+    /**
+     * 微件打开事件
+     */
+    onOpen() {},
+    /**
+     * 微件关闭事件
+     */
+    onClose() {},
+    /**
+     * 微件激活事件
+     */
+    onActive() {},
+    /**
+     * 微件不激活事件
+     */
+    onDeActive() {},
+    /**
+     * 微件大小被手动调整时，如果微件所在的面板不支持大小调整，则不会响应，如果不支持高度调整，则高度为 undefined。
+     * @param width 窗口宽度
+     * @param height 窗口高度
+     */
+    onResize(width, height) {},
+    /**
+     * 微件切换最大和常规模式时，`max`：最大化；`normal`：常规，如果微件所在的面板不支持窗口模式切换，则不会响应。
+     * @param mode 窗口模式
+     */
+    onWindowSize(mode) {},
     /**
      * 保存微件配置到管理平台
      */

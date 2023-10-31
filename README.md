@@ -34,13 +34,13 @@ yarn
 yarn build
 ```
 
-![](./images/%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B.png)
+![](./docs/images/%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B.png)
 
 # 引入方式
 
 支持 src 引入及 dist-libs 两种引入方式，默认情况下为 dist-libs 引入。如需修改为 src 引入方式，可在 package.json 文件当中修改"main"为"main1"，"module1"为"module"，以下截图方式。**src 方式引入，方便调试，发布请使用 dist-libs 的方式引入**，即修改"main1"为"main"，"module"为"module1"。
 
-![](./images/%E4%BF%AE%E6%94%B9%E5%BC%95%E7%94%A8%E8%B7%AF%E5%BE%84.png)
+![](./docs/images/%E4%BF%AE%E6%94%B9%E5%BC%95%E7%94%A8%E8%B7%AF%E5%BE%84.png)
 
 # 运行程序
 
@@ -62,7 +62,7 @@ yarn link
 yarn link @mapgis/mapgis-pan-spatial-map-widgets-frame
 ```
 
-4、在 mapgis-pan-spatial-map-app/src/core/use.js 中引入@mapgis/mapgis-pan-spatial-map-widgets-frame
+4、在 mapgis-pan-spatial-map-app/src/core/use.js 中引入@mapgis/mapgis-pan-spatial-map-widgets-frame，并Vue.use引入的库。如果有样式文件还需引入样式文件。
 
 ![](./docs/images/引入微件库.png)
 
@@ -74,8 +74,9 @@ yarn serve
 
 在前台页面可以看见微件显示效果
 
-![](./images/%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA.png)
+![](./docs/images/微件显示.png)
 
 # 微件扩展指南
 
 详见 [微件扩展指南](./docs/微件扩展指南.md)
+

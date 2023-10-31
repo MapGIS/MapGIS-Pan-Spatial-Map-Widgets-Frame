@@ -1,6 +1,6 @@
 {
   "name": "@mapgis/mapgis-pan-spatial-map-widgets-frame",
-  "version": "0.1.0",
+  "version": "16.6.0",
   "description": "中地数码一张图微件库",
   "productName": "MapGIS Pan-Spatial Map Widgets Frame",
   "author": "MapGIS",
@@ -11,7 +11,7 @@
     "build": "node --max_old_space_size=9960 ./node_modules/@vue/cli-service/bin/vue-cli-service build --target lib --name mapgis-pan-spatial-map-widgets-frame src/index.js"
   },
   "dependencies": {
-    "@mapgis/web-app-framework": "^16.0.0",
+    "@mapgis/web-app-framework": "^16.6.0",
     "vue": "2.6.14"
   },
   "devDependencies": {

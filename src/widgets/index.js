@@ -12,6 +12,8 @@ const install = (Vue) => {
       )
     ) {
       Vue.use(widget)
+    }else{
+      console.warn(`组件${(widget.options && widget.options.name) || widget.name}已注册`)
     }
   })
 }

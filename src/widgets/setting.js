@@ -12,6 +12,8 @@ const install = (Vue) => {
       )
     ) {
       Vue.use(setting)
+    }else{
+      console.warn(`组件${(setting.options && setting.options.name) || setting.name}已注册`)
     }
   })
 }

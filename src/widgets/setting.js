@@ -1,15 +1,27 @@
-import { WidgetExampleSetting } from "./widget-example/setting";
+import { WidgetExampleSetting } from './widget-example/setting'
 
-const widgets = [WidgetExampleSetting];
+const settings = [WidgetExampleSetting]
 
 const install = (Vue) => {
-  widgets.forEach((widget) => {
-    Vue.use(widget);
-  });
-};
+  settings.forEach((setting) => {
+    if (
+      !(
+        typeof Vue.component(
+          (setting.options && setting.options.name) || setting.name
+        ) === 'function'
+      )
+    ) {
+      Vue.use(setting)
+    }
+  })
+}
 
-export { WidgetExampleSetting };
+if (typeof window !== 'undefined' && window['MapgisApplicationVueRuntime']) {
+  install(window['MapgisApplicationVueRuntime'], {})
+}
+
+export { WidgetExampleSetting }
 
 export default {
   install,
-};
+}

@@ -4,16 +4,11 @@ const settings = [WidgetExampleSetting]
 
 const install = (Vue) => {
   settings.forEach((setting) => {
-    if (
-      !(
-        typeof Vue.component(
-          (setting.options && setting.options.name) || setting.name
-        ) === 'function'
-      )
-    ) {
+    const registerName = setting.options ? setting.options.name : setting.name
+    if (registerName in Vue.options.components) {
+      console.warn(`发现同名组件${registerName},已取消该组件注册`)
+    } else {
       Vue.use(setting)
-    }else{
-      console.warn(`组件${(setting.options && setting.options.name) || setting.name}已注册`)
     }
   })
 }

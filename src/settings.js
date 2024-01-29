@@ -1,6 +1,6 @@
 import './widgets/kuozhanweijianmulu/export'
 
-import * as WidgetExampleSetting from './widgets/kuozhanweijianmulu/setting'
+import * as WidgetExampleSetting from './widgets/kuozhanweijianmulu/settings'
 
 const settings = { ...WidgetExampleSetting }
 

@@ -28,9 +28,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "src/**/**/*.vue",
-    "src/index.js",
-    "src/index.js",
-    "src/index.js"
+    "src/widgets.js",
+    "src/widgets.js",
+    "src/widgets.js"
   ],
   "exclude": ["node_modules", "dist-libs"]
 }

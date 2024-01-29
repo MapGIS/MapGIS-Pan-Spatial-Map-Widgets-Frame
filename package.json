@@ -9,10 +9,10 @@
   "module": "src/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build:umd": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name widget  ./src/widgets/index.js",
-    "build:umd:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode setting --target lib --name setting  ./src/widgets/setting.js",
-    "build:min": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug --target lib --name widget ./src/widgets/index.js",
-    "build:min:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug.setting --target lib --name setting ./src/widgets/setting.js",
+    "build:umd": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name widget  ./src/widgets.js",
+    "build:umd:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode setting --target lib --name setting  ./src/settings.js",
+    "build:min": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug --target lib --name widget ./src/widgets.js",
+    "build:min:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug.setting --target lib --name setting ./src/settings.js",
     "lint": "vue-cli-service lint",
     "build": "yarn build:umd & yarn build:umd:setting",
     "build:debug": "yarn build:min & yarn build:min:setting"

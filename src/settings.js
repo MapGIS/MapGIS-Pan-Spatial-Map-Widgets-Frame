@@ -1,8 +1,6 @@
 import './widgets/kuozhanweijianmulu/export'
 
-import * as WidgetExampleSetting from './widgets/kuozhanweijianmulu/settings'
-
-const settings = { ...WidgetExampleSetting }
+import * as settings from './widgets/settings'
 
 const install = (Vue) => {
   for (const name in settings) {
@@ -11,7 +9,7 @@ const install = (Vue) => {
     if (registerName in Vue.options.components) {
       console.log(`发现同名组件[${registerName}],已取消该组件的注册`)
     } else {
-      Vue.component(registerName, com)
+      Vue.use(com)
     }
   }
 }

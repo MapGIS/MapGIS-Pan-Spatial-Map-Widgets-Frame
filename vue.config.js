@@ -1,7 +1,7 @@
-const CopyPlugin = require("copy-webpack-plugin");
-const utils = require("./build/utils");
+const CopyPlugin = require('copy-webpack-plugin')
+const utils = require('./build/utils')
 
-const distDir = utils.distDir;
+const distDir = utils.distDir
 
 module.exports = {
   productionSourceMap: false,
@@ -24,21 +24,23 @@ module.exports = {
       },
     },
     externals: {
-      "@mapgis/web-app-framework": "@mapgis/web-app-framework",
-      "@mapgis/webclient-vue-eventbus": "@mapgis/webclient-vue-eventbus",
-      "@mapgis/webclient-vue-ui": "@mapgis/webclient-vue-ui",
-      "@mapgis/webclient-vue-mapboxgl": "@mapgis/webclient-vue-mapboxgl",
-      "@mapgis/webclient-vue-cesium": "@mapgis/webclient-vue-cesium",
+      '@mapgis/web-app-framework': '@mapgis/web-app-framework',
+      '@mapgis/webclient-vue-eventbus': '@mapgis/webclient-vue-eventbus',
+      '@mapgis/webclient-vue-ui': '@mapgis/webclient-vue-ui',
+      '@mapgis/webclient-vue-mapboxgl': '@mapgis/webclient-vue-mapboxgl',
+      '@mapgis/webclient-vue-cesium': '@mapgis/webclient-vue-cesium',
     },
     plugins: [
-      new CopyPlugin([{ from: "widgets", to: "" }]),
+      new CopyPlugin(
+        process.env.VUE_ITEM === 'widget' ? [{ from: 'widgets', to: '' }] : []
+      ),
       function CustomPlugin(compiler) {
-        const filename = compiler.options.output.filename;
-        compiler.hooks.done.tap("CustomPlugin", () => {
-          if (filename.indexOf(".umd.min.js") > -1) {
-            utils.generateConfig();
+        const filename = compiler.options.output.filename
+        compiler.hooks.done.tap('CustomPlugin', () => {
+          if (filename.indexOf('.umd.min.js') > -1) {
+            utils.generateConfig()
           }
-        });
+        })
       },
     ],
     module: {
@@ -47,9 +49,9 @@ module.exports = {
           test: /\.umd\.js$/,
           use: [
             {
-              loader: "babel-loader",
+              loader: 'babel-loader',
               options: {
-                presets: ["@babel/preset-env"],
+                presets: ['@babel/preset-env'],
               },
             },
           ],

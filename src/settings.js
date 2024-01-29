@@ -1,25 +1,24 @@
 import './widgets/kuozhanweijianmulu/export'
 
-import { WidgetExampleSetting } from './widgets/kuozhanweijianmulu/setting'
+import * as WidgetExampleSetting from './widgets/kuozhanweijianmulu/setting'
 
-const settings = [WidgetExampleSetting]
+const settings = { ...WidgetExampleSetting }
 
 const install = (Vue) => {
-  settings.forEach((setting) => {
-    const registerName = setting.options ? setting.options.name : setting.name
+  for (const name in settings) {
+    const com = settings[name]
+    const registerName = com.options ? com.options.name : com.name
     if (registerName in Vue.options.components) {
-      console.warn(`发现同名组件${registerName},已取消该组件注册`)
+      console.log(`发现同名组件[${registerName}],已取消该组件的注册`)
     } else {
-      Vue.use(setting)
+      Vue.component(registerName, com)
     }
-  })
+  }
 }
 
 if (typeof window !== 'undefined' && window['MapgisApplicationVueRuntime']) {
   install(window['MapgisApplicationVueRuntime'], {})
 }
-
-export { WidgetExampleSetting }
 
 export default {
   install,

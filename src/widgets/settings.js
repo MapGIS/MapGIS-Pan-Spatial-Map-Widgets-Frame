@@ -1,1 +1,3 @@
-export { WidgetExampleSetting } from './kuozhanweijianmulu/settings'
+import { WidgetExampleSetting } from './kuozhanweijianmulu/settings'
+
+export { WidgetExampleSetting }

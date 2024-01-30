@@ -1,4 +1,4 @@
-import './widgets/kuozhanweijianmulu/export'
+import './widgets/settings'
 
 import * as settings from './widgets/settings'
 

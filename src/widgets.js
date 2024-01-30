@@ -1,4 +1,4 @@
-import './widgets/kuozhanweijianmulu/export'
+import './widgets/widgets'
 
 import * as widgets from './widgets/widgets'
 

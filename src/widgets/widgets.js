@@ -1,1 +1,3 @@
-export { MpWidgetExample } from './kuozhanweijianmulu/widgets'
+import { MpWidgetExample } from './kuozhanweijianmulu/widgets'
+
+export { MpWidgetExample }

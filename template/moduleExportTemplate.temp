@@ -1,0 +1,5 @@
+`
+import { {{widgetName}} } from './{{fileName}}'
+
+export { {{widgetName}} }
+`

@@ -2,7 +2,6 @@ const inquirer = require('inquirer')
 const handlebars = require('handlebars')
 const fs = require('fs')
 const path = require('path')
-const { generateConfig } = require('./utils')
 const prefix = './src/widgets/'
 
 function main() {

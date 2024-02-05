@@ -10,7 +10,8 @@ function main() {
       {
         type: 'input',
         name: 'packageName',
-        message: '请输入微件创建目录：',
+        message:
+          '请输入微件创建目录(支持一、二级目录,多个单词组成建议使用中划线连接，如test-widget或test/test-widget)：',
         validate: async function (input) {
           if (!input) {
             return '微件目录是必填的。'
@@ -31,15 +32,15 @@ function main() {
       {
         type: 'input',
         name: 'widgetName',
-        message: '请输入微件名：',
-        validate: async function (input) {
+        message: '请输入微件名(建议使用驼峰命名规范，如TestWidget)：',
+        validate: function (input) {
           if (!input) {
             return '微件名是必填的。'
           }
-          const createWidgetsName = await getWidgetsDirectory()
-          if (createWidgetsName.includes(input)) {
-            return '微件名已存在。'
-          }
+          // const createWidgetsName = await getWidgetsDirectory()
+          // if (createWidgetsName.includes(input)) {
+          //   return '微件名已存在。'
+          // }
           return true
         },
       },

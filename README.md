@@ -68,3 +68,20 @@ yarn build:debug // 调试打包
   将按上述步骤打包好的 zip 包通过管理平台的功能菜单**应用管理 -微件管理**进行主题 zip 包的上传操作。上传成功后通过功能菜单**应用管理-应用搭建**对微件进行配置，保存后登录一张图即可看到微件效果。
 
 > 若需要对以此种方式加载的微件进行调试，只需要执行调试打包脚本命令，将对应微件上传配置后进入一张图，打开控制台正常调试即可
+
+- link调试
+
+  在开发过程中若需要实时查看效果，通常使用link的方式进行，使用基本的link操作外，开发者只需要配置好主题的config.json和manifest.json文件即可，然后将对应的微件直接打包，将打包好的 zip 包通过管理平台的功能菜单**应用管理 -微件管理**进行主题 zip 包的上传操作。上传成功后通过功能菜单**应用管理-应用搭建**对微件进行配置，保存后登录一张图即可实时调试。
+
+  ```
+  yarn link // 微件脚手架执行
+  yarn link '@mapgis/mapgis-pan-spatial-map-widgets-frame' // 主应用中执行
+  
+  // 主应用中添加
+  import widgetsFrame from '@mapgis/mapgis-pan-spatial-map-widgets-frame'
+  Vue.use(widgetsFrame)
+  ```
+
+> link调试情况下是不需要执行打包脚本的，只需要将widgets目录下需要调试的微件定义好后通过管理平台上传即可
+>
+> 在执行打包脚本和link的情况下，项目优先使用link模式下的代码

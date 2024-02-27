@@ -1,16 +1,3 @@
-import { KuoZhanWeiJian } from './widgets/kuo-zhan-wei-jian-mu-lu'
+import './widgets'
 
-const components = [KuoZhanWeiJian]
-
-const install = (Vue) => {
-  components.forEach((component) => {
-    Vue.component(
-      (component.options && component.options.name) || component.name,
-      component
-    )
-  })
-}
-
-export default {
-  install,
-}
+import './settings'

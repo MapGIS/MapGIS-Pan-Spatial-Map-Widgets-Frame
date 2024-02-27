@@ -1,0 +1,10 @@
+import { default as {{widgetName}} } from "./{{fileName}}.vue";
+
+{{widgetName}}.install = (Vue) => {
+  Vue.component(
+    ({{widgetName}}.options && {{widgetName}}.options.name) || {{widgetName}}.name,
+    {{widgetName}}
+  );
+};
+
+export { {{widgetName}} };

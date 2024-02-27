@@ -8,29 +8,40 @@
   "main1": "dist-libs/mapgis-pan-spatial-map-widgets-frame.umd.min.js",
   "module": "src/index.js",
   "scripts": {
-    "build": "node --max_old_space_size=9960 ./node_modules/@vue/cli-service/bin/vue-cli-service build --target lib --name mapgis-pan-spatial-map-widgets-frame src/index.js"
+    "add:widget": "node build/create.js",
+    "serve": "vue-cli-service serve",
+    "build:umd": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --target lib --name widget  ./src/widgets.js",
+    "build:umd:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode setting --target lib --name setting  ./src/settings.js",
+    "build:min": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug --target lib --name widget ./src/widgets.js",
+    "build:min:setting": "node --max_old_space_size=16196 ./node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode debug.setting --target lib --name setting ./src/settings.js",
+    "lint": "vue-cli-service lint",
+    "build": "yarn build:umd & yarn build:umd:setting",
+    "build:debug": "yarn build:min & yarn build:min:setting"
   },
   "dependencies": {
-    "@mapgis/web-app-framework": "^16.6.0",
-    "vue": "2.6.14"
+    "@mapgis/web-app-framework": "^16.7.8",
+    "@mapgis/webclient-vue-mapboxgl": "^16.7.5",
+    "copy-webpack-plugin": "5.1.2",
+    "core-js": "^3.8.3",
+    "jspdf": "2.5.1",
+    "less": "3.12.2",
+    "less-loader": "^7.0.2",
+    "node-sass": "4.14.1",
+    "sass-loader": "10.1.1",
+    "vue": "^2.6.14",
+    "vuex": "3.6.2"
   },
   "devDependencies": {
-    "@types/node": "17.0.41",
-    "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.17.0",
-    "@vue/cli-plugin-babel": "~4.4.4",
-    "@vue/cli-plugin-eslint": "~4.4.4",
-    "@vue/cli-plugin-typescript": "^4.4.0",
-    "@vue/cli-service": "~4.4.4",
-    "babel-eslint": "^10.0.1",
-    "concurrently": "^5.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-vue": "^6.1.2",
-    "typescript": "~3.9.3",
-    "vue-template-compiler": "2.6.14"
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-template-compiler": "^2.6.14",
+    "webpack-cli": "^5.1.4",
+    "handlebars": "^4.7.8",
+    "inquirer": "8.2.6"
   }
 }
